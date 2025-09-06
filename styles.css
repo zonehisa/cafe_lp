@@ -291,41 +291,131 @@ section {
 .concept-item {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 15px;
+    border-left: 4px solid #D4AF37;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .concept-icon {
-    background: var(--accent-gold);
-    color: var(--primary-brown);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    background: linear-gradient(135deg, #D4AF37, #F4D03F);
+    color: #3C2A1E;
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     flex-shrink: 0;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.concept-text-content {
+    flex: 1;
+}
+
+.concept-text-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #FFFFFF !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .concept-item h3 {
     font-family: var(--font-serif);
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
     color: #FFFFFF !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.concept-text-content p {
+    line-height: 1.8;
+    color: #FFFFFF !important;
+    font-size: 1rem;
+    opacity: 0.95;
 }
 
 .concept-item p {
-    line-height: 1.7;
+    line-height: 1.8;
     color: #FFFFFF !important;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+.concept-item:hover {
+    transform: translateY(-5px);
+    background: rgba(212, 175, 55, 0.15);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+}
+
+.concept-item:hover .concept-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+}
+
+.concept-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1), transparent);
+    border-radius: 50%;
+    transform: translate(30px, -30px);
+    transition: all 0.3s ease;
+}
+
+.concept-item:hover::before {
+    transform: translate(20px, -20px) scale(1.2);
+}
+
+.concept-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 .concept-image img {
     width: 100%;
     height: 400px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+    filter: sepia(10%) saturate(1.1);
+}
+
+.concept-image:hover img {
+    transform: scale(1.05);
+    filter: sepia(0%) saturate(1.2);
+}
+
+.concept-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(60, 42, 30, 0.1));
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.concept-image:hover::after {
+    opacity: 0.7;
 }
 
 /* メニューセクション */
